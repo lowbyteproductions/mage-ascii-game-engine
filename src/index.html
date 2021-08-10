@@ -18,8 +18,19 @@ body {
   overflow: hidden;
 }
 
+canvas {
+  border: 1px solid black;
+  z-index: 9999;
+}
+
 #asc-engine-layer-container {
   position: relative;
+}
+
+#asc-engine-layer-container > canvas, #asc-engine-layer-container > div{
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .asc-engine-layer {
@@ -34,7 +45,7 @@ body {
   </style>
 </head>
 <body>
-
+  <p>fps: <span id="asc-engine-fps">0</span> Now using <button id="asc-engine-renderer-name">DOM Renderer</button></p>
   <div id="asc-engine-layer-container"></div>
   <script src="index.ts"></script>
 </body>

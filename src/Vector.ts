@@ -13,12 +13,22 @@ export default class Vector {
     return this;
   }
 
+  multiply(n: number): Vector {
+    this.x *= n;
+    this.y *= n; 
+    return this; 
+  }
+
   clone() {
     return new Vector(this.x, this.y);
   }
 
   static add(v1:Vector, v2:Vector) {
     return v1.clone().add(v2);
+  }
+
+  static multiply(v: Vector, n: number): Vector {
+    return v.clone().multiply(n); 
   }
 
   static Zero() {
